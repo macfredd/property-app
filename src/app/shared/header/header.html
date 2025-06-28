@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header class="fixed top-0 left-0 w-full z-50 bg-header text-textLight flex items-center justify-between px-6 py-4 shadow-lg">
+    <div class="flex items-center space-x-4">
+      <img src="assets/images/Logo.png" alt="Logo" class="h-8 w-8" />
+      <span class="text-xl font-bold text-accent">Property Finder</span>
+    </div>
+  
+    <nav class="flex space-x-6 text-sm">
+      <a routerLink="/" class="hover:text-accent transition-colors duration-200 cursor-pointer">Home</a>
+      <a routerLink="/search" class="hover:text-accent transition-colors duration-200 cursor-pointer">Buscar</a>
+      <a routerLink="/property/new" class="hover:text-accent transition-colors duration-200 cursor-pointer">Agregar Propiedad</a>
+      <a href="#" class="hover:text-accent transition-colors duration-200">Contáctenos</a>
+    </nav>
+  </header>
