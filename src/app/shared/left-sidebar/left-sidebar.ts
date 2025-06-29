@@ -13,7 +13,7 @@ export class LeftSidebar {
 
   isExpanded = false;
   contentVisible = false;
-  animationDuration = 500;
+  animationDuration = 300;
 
   expand() {
     this.isExpanded = true;
