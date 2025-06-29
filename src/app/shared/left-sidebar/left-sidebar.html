@@ -1,1 +1,25 @@
-<p>left-sidebar works!</p>
+<div
+  class="h-full transition-all duration-500 bg-gray-100 border-r shadow-md pt-16"
+  [ngClass]="{ 'w-64': isExpanded, 'w-12': !isExpanded }"
+  (mouseenter)="expand()"
+  (mouseleave)="collapse()"
+>
+  <div class="flex items-center justify-center h-12">
+    @if (!isExpanded) {
+      <i class="fa-solid fa-bars text-gray-600"></i>
+    }
+    @if (isExpanded) {
+      <span class="text-gray-700 font-semibold px-4">Menú</span>
+    }
+  </div>
+
+  @if (contentVisible) {
+    <nav class="px-4 space-y-4 mt-6 text-sm">
+      <a routerLink="/" class="block hover:text-primary">Home</a>
+      <a routerLink="/search" class="block hover:text-primary">Buscar</a>
+      <a routerLink="/property/new" class="block hover:text-primary">Agregar Propiedad</a>
+    </nav>
+  }
+</div>
+
+ 
