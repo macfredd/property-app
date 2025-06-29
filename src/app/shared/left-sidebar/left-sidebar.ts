@@ -14,10 +14,15 @@ export class LeftSidebar {
   isExpanded = false;
   contentVisible = false;
   animationDuration = 300;
+  private contentTimeout: any;
 
   expand() {
     this.isExpanded = true;
-    setTimeout(() => {
+    // Cancelar timeout anterior si existe
+    if (this.contentTimeout) {
+      clearTimeout(this.contentTimeout);
+    }
+    this.contentTimeout = setTimeout(() => {
       this.contentVisible = true;
     }, this.animationDuration);
   }
@@ -25,5 +30,10 @@ export class LeftSidebar {
   collapse() {
     this.isExpanded = false;
     this.contentVisible = false;
+    // Cancelar timeout si existe
+    if (this.contentTimeout) {
+      clearTimeout(this.contentTimeout);
+      this.contentTimeout = null;
+    }
   }
 }

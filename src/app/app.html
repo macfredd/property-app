@@ -1,14 +1,14 @@
 <app-header></app-header>
 
-<app-header></app-header>
-
-<div class="flex min-h-screen">
-  <aside class="transition-all duration-200">
+<!-- Main container -->
+<div class="relative min-h-screen pt-16">
+  <!-- Floating sidebar positioned over the content -->
+  <aside class="absolute top-16 left-0 h-full z-50">
     <app-left-sidebar></app-left-sidebar>
   </aside>
 
-  <!-- Main content -->
-  <main class="flex-1 p-6">
+  <!-- Main application content -->
+  <main class="px-4 ml-12">
     <router-outlet></router-outlet>
   </main>
 </div>
