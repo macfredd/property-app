@@ -5,6 +5,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      zIndex: {
+        '100': '100',
+        '200': '200',
+        '300': '300',
+        '400': '400',
+        '500': '500',
+      },
       colors: {
         // Colores principales - Paleta azul profesional
         primary: '#1e40af',      // blue-700 - más vibrante que el anterior

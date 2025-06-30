@@ -3,12 +3,12 @@
 <!-- Main container -->
 <div class="relative min-h-screen pt-16">
   <!-- Floating sidebar positioned over the content -->
-  <aside class="absolute top-16 left-0 h-full z-50">
+  <aside class="fixed top-16 left-0 h-full z-40">
     <app-left-sidebar></app-left-sidebar>
   </aside>
 
   <!-- Main application content -->
-  <main class="px-4 ml-12">
+  <main class="ml-12">
     <router-outlet></router-outlet>
   </main>
 </div>
