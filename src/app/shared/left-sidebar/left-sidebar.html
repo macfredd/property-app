@@ -1,10 +1,13 @@
 <div
   class="h-full transition-all duration-{{ animationDuration }} bg-gray-100 border-r shadow-md"
-  [ngClass]="{ 'w-64': isExpanded, 'w-12': !isExpanded }"
+  [ngClass]="{ 
+    'w-64 opacity-100': isExpanded, 
+    'w-12 opacity-50': !isExpanded 
+  }"
   (mouseenter)="expand()"
   (mouseleave)="collapse()"
 >
-  <div class="flex items-center justify-center h-12">
+  <div class="flex items-center justify-center h-8">
     @if (!isExpanded) {
       <i class="fa-solid fa-bars text-gray-600"></i>
     }
