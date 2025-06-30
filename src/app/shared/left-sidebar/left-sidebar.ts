@@ -18,7 +18,6 @@ export class LeftSidebar {
 
   expand() {
     this.isExpanded = true;
-    // Cancelar timeout anterior si existe
     if (this.contentTimeout) {
       clearTimeout(this.contentTimeout);
     }
@@ -30,7 +29,6 @@ export class LeftSidebar {
   collapse() {
     this.isExpanded = false;
     this.contentVisible = false;
-    // Cancelar timeout si existe
     if (this.contentTimeout) {
       clearTimeout(this.contentTimeout);
       this.contentTimeout = null;
