@@ -4,12 +4,12 @@ import { Property } from '../../shared/interfaces/property.interface';
 
 @Component({
   standalone: true,
-  selector: 'app-featured-properties',
+  selector: 'app-featured-section',
   imports: [PropertyCard],
-  templateUrl: './featured-properties.html',
-  styleUrl: './featured-properties.css'
+  templateUrl: './featured-section.html',
+  styleUrl: './featured-section.css'
 })
-export class FeaturedProperties {
+export class FeaturedSection {
 
   properties: Property[] = [
     { id: 1, title: "Casa Olguín", price: 190000, imageUrl: "/assets/images/properties/property-2-front.webp" },

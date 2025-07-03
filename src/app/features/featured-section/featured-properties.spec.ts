@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeaturedProperties } from './featured-properties';
+import { FeaturedSection } from './featured-section';
 
-describe('FeaturedProperties', () => {
-  let component: FeaturedProperties;
-  let fixture: ComponentFixture<FeaturedProperties>;
+describe('FeaturedSection', () => {
+  let component: FeaturedSection;
+  let fixture: ComponentFixture<FeaturedSection>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FeaturedProperties]
+      imports: [FeaturedSection]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FeaturedProperties);
+    fixture = TestBed.createComponent(FeaturedSection);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
