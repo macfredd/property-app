@@ -8,7 +8,9 @@
     "dev": "concurrently \"npm run json-server\" \"npm run start\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "clean": "rm -rf .angular && rm -rf node_modules/.cache && npm run build",
+    "clean:win": "if exist .angular rmdir /s /q .angular && if exist node_modules\\.cache rmdir /s /q node_modules\\.cache && npm run build"
   },
   "prettier": {
     "overrides": [
