@@ -12,7 +12,7 @@ import { Property } from '../../shared/interfaces/property.interface';
 export class FeaturedSection {
 
   properties: Property[] = [
-    { id: 1, title: "Casa Olguín", price: 190000, imageUrl: "/assets/images/properties/property-2-front.webp" },
+    { id: 1, title: "Casa Olguín", price: 190000, imageUrl: "/assets/images/properties/Casa-Olguin-2.webp" },
     { id: 2, title: "Casa para ver al Cielo", price: 175000, imageUrl: "/assets/images/properties/Casa-Cielo-front.webp" },
     { id: 3, title: "Casa Palermo", price: 210000, imageUrl: "/assets/images/properties/CasaPalermo-front.jpg" },
     { id: 4, title: "Natura", price: 30000, imageUrl: "/assets/images/properties/CasaNatura-front.webp" },
