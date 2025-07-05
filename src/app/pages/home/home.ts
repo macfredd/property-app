@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HeroSection } from '../../features/hero-section/hero-section';
-import { CategorySection } from '../../features/category-section/category-section';
-import { FeaturedSection } from '../../features/featured-section/featured-section';
-import { MapSection } from '../../features/map-section/map-section';
-import { AddSection } from '../../features/add-section/add-section';
+import { HeroSection } from '../../features/sections/hero-section/hero-section';
+import { CategorySection } from '../../features/sections/category-section/category-section';
+import { MapSection } from '../../features/sections/map-section/map-section';
+import { AddSection } from '../../features/sections/add-section/add-section';
+import { FeaturedSection } from '../../features/sections/featured-section/featured-section';
 
 
 @Component({

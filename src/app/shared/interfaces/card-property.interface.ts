@@ -1,4 +1,4 @@
-export interface Property {
+export interface CardProperty {
   id: number;
   title: string;
   price: number;

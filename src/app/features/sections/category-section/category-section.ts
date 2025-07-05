@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoryCard } from '../category-card/category-card';
+import { CategoryCard } from '../../category-card/category-card';
 
 @Component({
   standalone: true,
