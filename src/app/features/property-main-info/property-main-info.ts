@@ -1,70 +1,66 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PropertyMainInfoService } from './services/property-main-info';
-import { Property } from '../../shared/interfaces/property';
 import { CommonModule } from '@angular/common';
+import { Property } from '../../shared/interfaces/property';
 import { PropertyImage } from '../../shared/interfaces/property-image';
+import { PropertyMainInfoService } from './services/property-main-info';
+import { PropertyInfoPanelComponent } from './property-info-panel';
 
 @Component({
-  standalone: true,
   selector: 'app-property-main-info',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, PropertyInfoPanelComponent],
   templateUrl: './property-main-info.html',
-  styleUrl: './property-main-info.css'
+  styleUrls: ['./property-main-info.css']
 })
-export class PropertyMainInfo implements OnInit {
-  private route = inject(ActivatedRoute);
-  private propertyService = inject(PropertyMainInfoService);
-
-  // Signals
+export class PropertyMainInfoComponent implements OnInit {
   property = signal<Property | null>(null);
-  propertyImages = signal<PropertyImage[] | null>(null);
-
+  propertyImages = signal<PropertyImage[]>([]);
   loading = signal<boolean>(true);
   error = signal<string | null>(null);
 
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute,
+    private propertyService: PropertyMainInfoService
+  ) {}
+
+  ngOnInit(): void {
     this.loadPropertyData();
   }
 
-  loadPropertyData() {
+  loadPropertyData(): void {
     this.loading.set(true);
     this.error.set(null);
 
-    const propertyId = Number(this.route.snapshot.paramMap.get('id'));
-
+    const propertyId = this.route.snapshot.paramMap.get('id');
     if (!propertyId) {
       this.error.set('ID de propiedad no válido');
       this.loading.set(false);
       return;
     }
 
-    // Cargar propiedad e imágenes en paralelo
-    this.loadProperty(propertyId);
-    this.loadPropertyImages(propertyId);
-  }
-
-  loadProperty(propertyId: number) {
-    this.propertyService.getPropertyData(propertyId).subscribe({
-      next: (property) => {
-        console.log(property);
+    const id = Number(propertyId);
+    this.propertyService.getPropertyData(id).subscribe({
+      next: (property: Property | null) => {
         this.property.set(property);
+        if (property) {
+          this.loadPropertyImages(id);
+        }
         this.loading.set(false);
       },
-      error: (err) => {
-        this.error.set('Error al cargar la propiedad');
+      error: (err: any) => {
+        this.error.set('Error al cargar la propiedad: ' + err.message);
         this.loading.set(false);
-        console.error('Error loading property:', err);
       }
     });
   }
 
-  loadPropertyImages(propertyId: number) {
+  private loadPropertyImages(propertyId: number): void {
     this.propertyService.getPropertyImages(propertyId).subscribe({
-      next: (images) => {
+      next: (images: PropertyImage[]) => {
         this.propertyImages.set(images);
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error loading property images:', err);
       }
     });
