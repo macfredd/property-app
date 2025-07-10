@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { PropertyMainInfoComponent } from '../../features/property-main-info/property-main-info';
+import { PropertyMainInfo } from '../../features/property-main-info/property-main-info';
+import { ImageGrid } from '../../features/image-grid/image-grid';
 
 
 @Component({
   selector: 'app-property-detail',
-  imports: [PropertyMainInfoComponent],
+  imports: [PropertyMainInfo, ImageGrid],
   templateUrl: './property-detail.html',
   styleUrl: './property-detail.css'
 })

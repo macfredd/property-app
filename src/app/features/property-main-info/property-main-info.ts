@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 import { Property } from '../../shared/interfaces/property';
 import { PropertyImage } from '../../shared/interfaces/property-image';
 import { PropertyMainInfoService } from './services/property-main-info';
-import { PropertyInfoPanelComponent } from './property-info-panel';
+import { PropertyInfoPanel } from './property-info-panel';
 
 @Component({
   selector: 'app-property-main-info',
   standalone: true,
-  imports: [CommonModule, PropertyInfoPanelComponent],
+  imports: [CommonModule, PropertyInfoPanel],
   templateUrl: './property-main-info.html',
   styleUrls: ['./property-main-info.css']
 })
-export class PropertyMainInfoComponent implements OnInit {
+export class PropertyMainInfo implements OnInit {
   property = signal<Property | null>(null);
   propertyImages = signal<PropertyImage[]>([]);
   loading = signal<boolean>(true);

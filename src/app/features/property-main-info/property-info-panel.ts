@@ -9,7 +9,7 @@ import { PropertyImage } from '../../shared/interfaces/property-image';
   templateUrl: './property-info-panel.html',
   styles: []
 })
-export class PropertyInfoPanelComponent {
+export class PropertyInfoPanel {
   @Input({ required: true }) property = signal<Property | null>(null);
   @Input() propertyImages = signal<PropertyImage[]>([]);
 } 
