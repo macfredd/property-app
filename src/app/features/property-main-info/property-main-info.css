@@ -1,0 +1,43 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Drop Cap Styles */
+.drop-cap {
+  position: relative;
+}
+
+.drop-cap-letter {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 0.7;
+  float: left;
+  margin-right: 0.1em;
+  margin-top: -0.3em;
+  margin-bottom: 0;
+  color: #1f2937;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+  position: relative;
+  top: -0.2em;
+}
+
+.drop-cap-letter:hover {
+  transform: rotate(0deg) scale(1.05);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .drop-cap-letter {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .drop-cap-letter {
+    font-size: 3rem;
+  }
+}

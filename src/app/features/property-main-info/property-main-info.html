@@ -1,7 +1,7 @@
 
 <!-- Property data -->
 @if (property) {
-  <section class="relative w-full h-[90vh] overflow-hidden">
+  <section class="relative w-full h-[90vh] overflow-hidden ">
     <!-- Background image -->
     <img [src]="mainImage" alt="Propiedades" class="w-full h-full object-cover">
     
@@ -26,8 +26,11 @@
 
   <!-- Description -->
   <section class="w-full px-6 md:px-20 py-12 overflow-hidden">
-    <p class="text-gray-700 text-base text-lg text-justify leading-relaxed">
-      {{ property.description }}
+    <p class="text-gray-700 text-base text-lg text-justify leading-relaxed drop-cap">
+      @if (property.description) {
+        <span class="drop-cap-letter">{{ property.description.charAt(0) }}</span>
+        {{ property.description.substring(1) }}
+      }
     </p>
   </section>
 }
