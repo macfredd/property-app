@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PropertyImage } from '../../shared/interfaces/property-image';
 
 @Component({
   standalone: true,
@@ -10,4 +11,5 @@ import { Component } from '@angular/core';
 })
 export class ImageGrid {
 
+  @Input() propertyImages: PropertyImage[] = [];
 }
