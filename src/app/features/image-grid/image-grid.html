@@ -1,7 +1,7 @@
-<section class="pl-20 bg-white">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 place-items-center">
+<section class="pl-20 bg-white min-h-screen">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 auto-rows-fr">
         @for (image of propertyImages; track image.id) {
-            <div class="w-full h-full overflow-hidden group">
+            <div class="h-auto overflow-hidden group">
                 <img [src]="image.imagePath" 
                      alt="Propiedades" 
                      class="object-cover w-full h-full transition-all duration-300 grayscale hover:grayscale-0 cursor-pointer">
