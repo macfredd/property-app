@@ -1,2 +1,17 @@
-<app-property-main-info></app-property-main-info>
+<!-- Loading state -->
+@if (loading()) {
+    <div class="flex justify-center items-center py-12">
+      <div class="text-center">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+        <p class="mt-2 text-gray-600 text-sm">Cargando información...</p>
+      </div>
+    </div>
+  }
+
+<app-property-main-info 
+    [property]="property()" 
+    [mainImage]="mainImage()"
+    [propertyImages]="propertyImages()">
+</app-property-main-info>
+
 <app-image-grid></app-image-grid>

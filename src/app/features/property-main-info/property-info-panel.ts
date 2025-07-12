@@ -10,6 +10,6 @@ import { PropertyImage } from '../../shared/interfaces/property-image';
   styles: []
 })
 export class PropertyInfoPanel {
-  @Input({ required: true }) property = signal<Property | null>(null);
-  @Input() propertyImages = signal<PropertyImage[]>([]);
+  @Input({ required: true }) property: Property | null = null;
+  @Input() propertyImages: PropertyImage[] = [];
 } 

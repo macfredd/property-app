@@ -8,7 +8,7 @@ import { PropertyImage } from '../../../shared/interfaces/property-image';
 @Injectable({
   providedIn: 'root'
 })
-export class PropertyMainInfoService {
+export class PropertyDetailInfoService {
 
   constructor(private http: HttpClient) { }
 
