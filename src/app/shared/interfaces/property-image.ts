@@ -1,4 +1,4 @@
-export interface PropertyImage {
+export interface IPropertyImage {
     id: number;
     propertyId: number;
     imagePath: string;

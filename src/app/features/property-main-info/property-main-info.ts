@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PropertyInfoPanel } from './property-info-panel';
-import { Property } from '../../shared/interfaces/property';
-import { PropertyImage } from '../../shared/interfaces/property-image';
+import { IProperty } from '../../shared/interfaces/property';
+import { IPropertyImage } from '../../shared/interfaces/property-image';
 
 @Component({
   selector: 'app-property-main-info',
@@ -13,7 +13,7 @@ import { PropertyImage } from '../../shared/interfaces/property-image';
 })
 export class PropertyMainInfo {
    
-  @Input() property: Property | null = null;
+  @Input() property: IProperty | null = null;
   @Input() mainImage: string | null = null;
-  @Input() propertyImages: PropertyImage[] = [];
+  @Input() propertyImages: IPropertyImage[] = [];
 }

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Category } from '../../shared/interfaces/category.interface';
+import { ICategory } from '../../shared/interfaces/category.interface';
 
 @Component({
   standalone: true,
@@ -12,7 +12,7 @@ import { Category } from '../../shared/interfaces/category.interface';
 })
 export class CategoryCard {
 
-  @Input() category!: Category;
+  @Input() category!: ICategory;
 
   constructor(private router: Router) {
   }

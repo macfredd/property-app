@@ -1,0 +1,30 @@
+<section class="rating-list px-10 md:px-40 py-4">
+  <h1 class="text-2xl font-bold mb-6">Ratings</h1>
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    @for (rating of ratings; track rating.id) {
+      <li>
+        <div class="bg-white rounded-lg shadow p-5 flex flex-col h-full">
+          <!-- Header -->
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-semibold text-lg text-gray-800">{{ rating.authorName }}</span>
+            <span class="flex items-center">
+              @for (star of [1,2,3,4,5]; track star) {
+                <svg class="w-5 h-5 mx-0.5" fill="none" stroke="currentColor" [class.text-yellow-400]="star <= rating.score" [class.fill-yellow-400]="star <= rating.score" [class.text-gray-300]="star > rating.score" viewBox="0 0 24 24">
+                  <polygon stroke-linejoin="round" stroke-width="2" points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27" />
+                </svg>
+              }
+            </span>
+          </div>
+          <!-- Body -->
+          <div class="flex-1 text-gray-700 mb-3">
+            <p>{{ rating.comment }}</p>
+          </div>
+          <!-- Footer -->
+          <div class="flex justify-end items-center mt-auto">
+            <span class="text-xs text-gray-400">{{ rating.createdAt | date:'short' }}</span>
+          </div>
+        </div>
+      </li>
+    }
+  </ul>
+</section>

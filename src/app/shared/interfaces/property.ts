@@ -1,4 +1,4 @@
-export interface Property {
+export interface IProperty {
     id: number;
     typeId: number;
     ownerId: number;

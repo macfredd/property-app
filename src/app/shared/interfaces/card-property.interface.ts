@@ -1,4 +1,4 @@
-export interface CardProperty {
+export interface ICardProperty {
   id: number;
   title: string;
   price: number;

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardProperty } from '../../shared/interfaces/card-property.interface';
+import { ICardProperty } from '../../shared/interfaces/card-property.interface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 
 export class PropertyCard {
-  @Input() property!: CardProperty;
+  @Input() property!: ICardProperty;
 
   constructor(private router: Router) {
   }

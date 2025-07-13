@@ -8,12 +8,19 @@
     </div>
   }
 
+<!-- Property main info -->
 <app-property-main-info 
     [property]="property()" 
     [mainImage]="mainImage()"
     [propertyImages]="propertyImages()">
 </app-property-main-info>
 
+<!-- Property images grid -->
 <app-image-grid
     [propertyImages]="propertyImages()">
 </app-image-grid>
+
+<!-- Ratings section -->
+<app-rating-list
+    [ratings]="ratings()">
+</app-rating-list>

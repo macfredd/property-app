@@ -1,6 +1,6 @@
 import { Component, Input, signal } from '@angular/core';
-import { Property } from '../../shared/interfaces/property';
-import { PropertyImage } from '../../shared/interfaces/property-image';
+import { IProperty } from '../../shared/interfaces/property';
+import { IPropertyImage } from '../../shared/interfaces/property-image';
 
 @Component({
   selector: 'app-property-info-panel',
@@ -10,6 +10,6 @@ import { PropertyImage } from '../../shared/interfaces/property-image';
   styles: []
 })
 export class PropertyInfoPanel {
-  @Input({ required: true }) property: Property | null = null;
-  @Input() propertyImages: PropertyImage[] = [];
+  @Input({ required: true }) property: IProperty | null = null;
+  @Input() propertyImages: IPropertyImage[] = [];
 } 

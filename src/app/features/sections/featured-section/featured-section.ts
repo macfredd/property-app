@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PropertyCard } from '../../property-card/property-card';
-import { CardProperty } from '../../../shared/interfaces/card-property.interface';
+import { ICardProperty } from '../../../shared/interfaces/card-property.interface';
 
 @Component({
   standalone: true,
@@ -11,7 +11,7 @@ import { CardProperty } from '../../../shared/interfaces/card-property.interface
 })
 export class FeaturedSection {
 
-  properties: CardProperty[] = [
+  properties: ICardProperty[] = [
     { id: 1, title: "Casa Olguín", price: 190000, imageUrl: "/assets/images/properties/Casa-Olguin-2.webp" },
     { id: 2, title: "Casa para ver al Cielo", price: 175000, imageUrl: "/assets/images/properties/Casa-Cielo-front.webp" },
     { id: 3, title: "Casa Palermo", price: 210000, imageUrl: "/assets/images/properties/CasaPalermo-front.jpg" },
