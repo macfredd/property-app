@@ -1,14 +1,16 @@
-<section class="py-12 bg-white">
+<section class="py-12" style="background: conic-gradient(from 90deg at -10% 100%,#bcc1cd 0deg,#bcc1cd 90deg,#fff 1turn);">
   <div class="max-w-screen-xl mx-auto px-4 text-center">
     <h2 class="text-3xl font-bold text-gray-900 mb-2">Propiedades destacadas</h2>
     <p class="text-gray-600 mb-10 text-sm sm:text-base">
       Descubre las propiedades más populares del momento, seleccionadas por su ubicación, precio y demanda.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center featured-grid">
 
       @for (property of properties; track property.id) {
-        <app-property-card [property]="property"></app-property-card>
+        <div class="featured-property-card">
+          <app-property-card [property]="property"></app-property-card>
+        </div>
       }
     </div>
   </div>

@@ -1,0 +1,18 @@
+/* Estilos específicos para la sección de propiedades destacadas */
+.featured-property-card {
+  transition: transform 0.3s ease-out;
+}
+
+.featured-property-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Mejora el espaciado y la presentación */
+.featured-grid {
+  gap: 1.5rem;
+}
+
+/* Efecto de sombra sutil en hover */
+.featured-property-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
