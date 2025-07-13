@@ -7,6 +7,7 @@ import { ImageGrid } from '../../features/image-grid/image-grid';
 import { PropertyMainInfo } from '../../features/property-main-info/property-main-info';
 import { IRating } from '../../shared/interfaces/rating.interface';
 import { RatingList } from '../../features/rating-list/rating-list';
+import { RatingSummary } from '../../features/rating-summary/rating-summary';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { RatingList } from '../../features/rating-list/rating-list';
   imports: [
     PropertyMainInfo, 
     ImageGrid,
+    RatingSummary,
     RatingList],
   templateUrl: './property-detail.html',
   styleUrl: './property-detail.css'

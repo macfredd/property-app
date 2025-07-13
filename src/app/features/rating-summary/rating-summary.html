@@ -1,0 +1,31 @@
+<section class="mx-10 md:mx-40 py-4 bg-white rounded shadow inline-block min-w-max">
+  <h2 class="text-xl font-bold mb-4">Resumen de Puntuaciones</h2>
+  <div class="mb-2 text-gray-700">Total puntuaciones: <span class="font-semibold">{{ totalRatings }}</span></div>
+  <table class="min-w-max text-sm">
+    <tbody>
+      @for (star of [5,4,3,2,1]; track star) {
+        <tr>
+          <!-- Columna 1: Número de estrellas -->
+          <td class="pr-2 text-right w-8">{{ star }}</td>
+          <!-- Columna 2: Estrellas dibujadas -->
+          <td class="pr-2">
+            <span class="flex">
+              @for (i of [1,2,3,4,5]; track i) {
+                <svg *ngIf="i <= star" class="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24">
+                  <polygon stroke-linejoin="round" stroke-width="2" points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27" />
+                </svg>
+                <svg *ngIf="i > star" class="w-4 h-4 text-gray-300" viewBox="0 0 24 24">
+                  <polygon stroke-linejoin="round" stroke-width="2" points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27" />
+                </svg>
+              }
+            </span>
+          </td>
+          <!-- Columna 3: Porcentaje -->
+          <td class="pl-2 text-right w-12">
+            {{ ratingPercentages[star] || 0 }}%
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

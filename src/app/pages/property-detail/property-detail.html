@@ -20,7 +20,14 @@
     [propertyImages]="propertyImages()">
 </app-image-grid>
 
-<!-- Ratings section -->
-<app-rating-list
+@if (ratings().length > 0) {
+  <!-- Ratings summary -->
+  <app-rating-summary
     [ratings]="ratings()">
-</app-rating-list>
+  </app-rating-summary>
+
+  <!-- Ratings section -->
+  <app-rating-list
+    [ratings]="ratings()">
+  </app-rating-list>
+ }
