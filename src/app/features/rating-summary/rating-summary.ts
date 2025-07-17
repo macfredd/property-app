@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IRating } from '../../shared/interfaces/rating.interface';
 
@@ -10,6 +10,8 @@ import { IRating } from '../../shared/interfaces/rating.interface';
 })
 export class RatingSummary implements OnChanges {
   @Input() ratings: IRating[] = [];
+  @Output() filterByScore: EventEmitter<number> = new EventEmitter();
+  @Output() ShowAllRatings: EventEmitter<void> = new EventEmitter();
 
   totalRatings = 0;
   ratingPercentages: { [star: number]: number } = {};

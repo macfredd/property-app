@@ -647,7 +647,7 @@
     { "id": 57, "propertyId": 4, "imagePath":   "./assets/images/properties/CasaNatura-17.webp", "description": "Cocina americana" }
   ],
   "ratings": [
-    { "id": 1, "propertyId": 1, "score": 5, "comment": "Excelente ubicación y muy segura. La casa está en perfectas condiciones.", "authorName": "Ana G.", "createdAt": "2025-01-25T09:30:00Z" },
+    { "id": 1, "propertyId": 1, "score": 5, "comment": "Excelente ubicación y muy segura. La casa está en perfectas condiciones. Ideal para vacacionar, cuenta con absolutamente todo lo que tu familia necesite para pasar un buen tiempo", "authorName": "Ana G.", "createdAt": "2025-01-25T09:30:00Z" },
     { "id": 2, "propertyId": 1, "score": 4, "comment": "Buena relación calidad-precio. El jardín es hermoso.", "authorName": "Luis M.", "createdAt": "2025-01-26T14:45:00Z" },
     { "id": 3, "propertyId": 1, "score": 5, "comment": "Zona muy tranquila y familiar. Perfecta para niños.", "authorName": "Carlos P.", "createdAt": "2025-01-27T10:15:00Z" },
     { "id": 4, "propertyId": 2, "score": 3, "comment": "El apartamento es bonito pero un poco ruidoso por la calle.", "authorName": "Pedro R.", "createdAt": "2025-01-28T12:20:00Z" },

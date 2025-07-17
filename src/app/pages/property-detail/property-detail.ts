@@ -25,7 +25,9 @@ export class PropertyDetail implements OnInit {
   property = signal<IProperty | null>(null);
   propertyImages = signal<IPropertyImage[]>([]);
   mainImage = signal<string | null>(null);
-  ratings = signal<IRating[]>([]);
+ 
+  allRatings: IRating[] = []; 
+  filteredRatings: IRating[] = [];
   
   loading = signal<boolean>(true);
   error = signal<string | null>(null);
@@ -95,11 +97,20 @@ export class PropertyDetail implements OnInit {
   private loadRatings(propertyId: number): void {
     this.propertyService.getRatingsByProperty(propertyId).subscribe({
       next: (ratings: IRating[]) => {
-        this.ratings.set(ratings);
+        this.allRatings = ratings;
+        this.filteredRatings = ratings;
       },
       error: (err: any) => {
         console.error('Error loading ratings:', err);
       }
     });
+  }
+
+  /**
+   * Handle filtering ratings by score
+   * @param score - The score to filter by
+   */
+  filteredByScore(score: number): void {
+    this.filteredRatings = this.allRatings.filter(r => r.score === score);
   }
 }

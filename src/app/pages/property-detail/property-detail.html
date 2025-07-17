@@ -20,14 +20,16 @@
     [propertyImages]="propertyImages()">
 </app-image-grid>
 
-@if (ratings().length > 0) {
+@if (allRatings.length > 0) {
   <!-- Ratings summary -->
   <app-rating-summary
-    [ratings]="ratings()">
+    [ratings]="allRatings"
+    (filterByScore)="filteredByScore($event)"
+    (ShowAllRatings)="filteredRatings = allRatings">
   </app-rating-summary>
 
   <!-- Ratings section -->
   <app-rating-list
-    [ratings]="ratings()">
+    [ratings]="filteredRatings">
   </app-rating-list>
  }

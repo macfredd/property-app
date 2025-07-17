@@ -1,6 +1,6 @@
-<section class="mx-10 md:mx-40 py-4 bg-white rounded shadow inline-block min-w-max">
+<section class="mx-10 md:mx-20 pr-10 py-4 bg-white rounded  inline-block min-w-max">
   <h2 class="text-xl font-bold mb-4">Resumen de Puntuaciones</h2>
-  <div class="mb-2 text-gray-700">Total puntuaciones: <span class="font-semibold">{{ totalRatings }}</span></div>
+  <div class="mb-2 text-gray-700">Total puntuaciones: <span class="font-semibold cursor-pointer text-blue-600 underline hover:text-blue-800 hover:underline transition" (click)="ShowAllRatings.emit()">{{ totalRatings }}</span></div>
   <table class="min-w-max text-sm">
     <tbody>
       @for (star of [5,4,3,2,1]; track star) {
@@ -21,7 +21,7 @@
             </span>
           </td>
           <!-- Columna 3: Porcentaje -->
-          <td class="pl-2 text-right w-12">
+          <td class="pl-2 text-right w-12 cursor-pointer text-blue-600 underline hover:text-blue-800 hover:underline transition" (click)="filterByScore.emit(star)">
             {{ ratingPercentages[star] || 0 }}%
           </td>
         </tr>
