@@ -7,7 +7,7 @@ export const routes: Routes = [
     },
     {
         path: 'search',
-        loadComponent: () => import('./pages/search-results/search-results').then(m => m.SearchResults)
+        loadComponent: () => import('./pages/search/search').then(m => m.Search)
     },
     {
         path: 'property/new',

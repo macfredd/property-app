@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PropertyCard } from '../../property-card/property-card';
-import { ICardProperty } from '../../../shared/interfaces/card-property.interface';
+import { PropertyCard } from '../../../../features/property-card/property-card';
+import { ICardProperty } from '../../../../shared/interfaces/card-property.interface';
 
 @Component({
   standalone: true,
