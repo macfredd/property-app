@@ -1,0 +1,155 @@
+<section class="relative w-full h-[70vh] overflow-hidden" style="background: conic-gradient(from 90deg at -10% 100%,#bcc1cd 0deg,#bcc1cd 90deg,#fff 1turn);">
+  <img [src]="imageUrl" alt="Propiedades" class="w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  
+  <!-- Hero Content -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+    
+    <!-- Search Form -->
+    <div class="w-full max-w-2xl bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
+      <form (ngSubmit)="buscarPropiedades()" class="search-form-spacing">
+        
+        <!-- Tipo de propiedad - Row 1 -->
+        <div class="w-full">
+          <label class="text-sm font-medium text-gray-700 block mb-3 text-center">Tipo de propiedad</label>
+          <div class="flex justify-center gap-4">
+            <button 
+              type="button"
+              (click)="selectPropertyType(1)"
+              [class]="filtros.typeId === 1 ? 'property-type-btn property-type-btn-selected' : 'property-type-btn'">
+              <img src="assets/images/icons/house.png" alt="Casa" class="mb-2">
+              <span class="text-sm font-medium text-gray-800">Casa</span>
+            </button>
+            
+            <button 
+              type="button"
+              (click)="selectPropertyType(2)"
+              [class]="filtros.typeId === 2 ? 'property-type-btn property-type-btn-selected' : 'property-type-btn'">
+              <img src="assets/images/icons/aparment.png" alt="Apartamento" class="mb-2">
+              <span class="text-sm font-medium text-gray-800">Apartamento</span>
+            </button>
+            
+            <button 
+              type="button"
+              (click)="selectPropertyType(3)"
+              [class]="filtros.typeId === 3 ? 'property-type-btn property-type-btn-selected' : 'property-type-btn'">
+              <img src="assets/images/icons/terrain.png" alt="Terreno" class="mb-2">
+              <span class="text-sm font-medium text-gray-800">Terreno</span>
+            </button>
+            
+            <button 
+              type="button"
+              (click)="selectPropertyType(4)"
+              [class]="filtros.typeId === 4 ? 'property-type-btn property-type-btn-selected' : 'property-type-btn'">
+              <img src="assets/images/icons/farm.png" alt="Finca" class="mb-2">
+              <span class="text-sm font-medium text-gray-800">Finca</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Rango de precio y Área construida - Row 2 -->
+        <div class="w-full sliders-row">
+          <!-- Rango de precio -->
+          <div>
+            <label class="text-sm font-medium text-gray-700 block mb-2">Rango de precio: ${{ filtros.priceMin | number }} - ${{ filtros.priceMax | number }}</label>
+            <div class="dual-range-container slider-container">
+              <input type="range" 
+                     [(ngModel)]="filtros.priceMin" 
+                     name="priceMin" 
+                     min="0" 
+                     max="1000000" 
+                     class="range-input range-min" 
+                     (input)="onPriceMinChange($event)" />
+              <input type="range" 
+                     [(ngModel)]="filtros.priceMax" 
+                     name="priceMax" 
+                     min="0" 
+                     max="1000000" 
+                     class="range-input range-max" 
+                     (input)="onPriceMaxChange($event)" />
+              <div class="range-track">
+                <div class="range-fill" 
+                     [style.left]="(filtros.priceMin / 1000000 * 100) + '%'"
+                     [style.width]="((filtros.priceMax - filtros.priceMin) / 1000000 * 100) + '%'">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Área construida -->
+          <div>
+            <label class="text-sm font-medium text-gray-700 block mb-2">Área construida: {{ filtros.builtAreaMin | number }} - {{ filtros.builtAreaMax | number }} m²</label>
+            <div class="dual-range-container slider-container">
+              <input type="range" 
+                     [(ngModel)]="filtros.builtAreaMin" 
+                     name="builtAreaMin" 
+                     min="0" 
+                     max="10000" 
+                     step="50" 
+                     class="range-input range-min" 
+                     (input)="onBuiltAreaMinChange($event)" />
+              <input type="range" 
+                     [(ngModel)]="filtros.builtAreaMax" 
+                     name="builtAreaMax" 
+                     min="0" 
+                     max="10000" 
+                     step="50" 
+                     class="range-input range-max" 
+                     (input)="onBuiltAreaMaxChange($event)" />
+              <div class="range-track">
+                <div class="range-fill" 
+                     [style.left]="(filtros.builtAreaMin / 10000 * 100) + '%'"
+                     [style.width]="((filtros.builtAreaMax - filtros.builtAreaMin) / 10000 * 100) + '%'">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Habitaciones y Baños - Row 3 -->
+        <div class="w-full grid grid-cols-2 gap-6">
+          <!-- Habitaciones -->
+          <div>
+            <label class="text-sm font-medium text-gray-700 block mb-2 text-center">Habitaciones</label>
+            <div class="flex gap-2 justify-center">
+              <button 
+                type="button"
+                *ngFor="let num of [1,2,3,4,5]" 
+                (click)="selectRooms(num)"
+                [class]="filtros.rooms === num ? 'number-box number-box-selected' : 'number-box'">
+                {{ num }}
+              </button>
+            </div>
+          </div>
+          
+          <!-- Baños -->
+          <div>
+            <label class="text-sm font-medium text-gray-700 block mb-2 text-center">Baños</label>
+            <div class="flex gap-2 justify-center">
+              <button 
+                type="button"
+                *ngFor="let num of [1,2,3,4,5]" 
+                (click)="selectBathrooms(num)"
+                [class]="filtros.bathrooms === num ? 'number-box number-box-selected' : 'number-box'">
+                {{ num }}
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Wifi - Row 4 -->
+        <div class="w-full flex items-center justify-center">
+          <label for="wifi" class="text-sm font-medium text-gray-700 mr-2">Wifi</label>
+          <input type="checkbox" [(ngModel)]="filtros.wifi" name="wifi" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+        </div>
+        
+        <!-- Botón buscar - Row 5 -->
+        <div class="w-40 mx-auto">
+          <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors">
+            Buscar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section> 
